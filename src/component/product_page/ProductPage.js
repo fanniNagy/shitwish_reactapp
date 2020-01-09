@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
-import Button from "react-bootstrap/Button";
+import PopoverAtBottom from "./Popover";
 
 function ProductPage({match}) {
     const id = match.params.id;
@@ -31,7 +31,7 @@ function ProductPage({match}) {
         }
 
         fetchData();
-    }, [url]);
+    },[url]);
 
     if (error) {
         return (<div>
@@ -43,7 +43,6 @@ function ProductPage({match}) {
                 loading..
             </div>)
     } else{
-        console.log(details);
         return (
             <div className="container">
                     <div className="picture">
@@ -67,14 +66,32 @@ function ProductPage({match}) {
                                 </tbody>
                             </Table>
                         </div>
-                        <div className="buy-button"><Button variant="info">Get it!</Button></div>
+                        <div className="buy-button"><PopoverAtBottom data={details} id={id}/></div>
                     </div>
                 <div className="seller-info">
                     <Accordion className="seller-acc">
                         <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="0">Seller info</Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
-                                <Card.Body>Hello! I'm the body</Card.Body>
+                                <Card.Body>
+                                    <Table borderless={true}>
+                                        <thead/>
+                                        <tbody>
+                                        <tr>
+                                            <td className="row">Name</td>
+                                            <td>{details.sellerName}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="row">Phone number</td>
+                                            <td id="description">{details.phoneNumber} </td>
+                                        </tr>
+                                        <tr>
+                                            <td className="row">Email</td>
+                                            <td id="description">{details.email} </td>
+                                        </tr>
+                                        </tbody>
+                                    </Table>
+                                </Card.Body>
                             </Accordion.Collapse>
                         </Card>
                     </Accordion>

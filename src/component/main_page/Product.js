@@ -6,8 +6,8 @@ import Badge from "react-bootstrap/Badge";
 function Product({product}) {
     return (
         <Card style={{width: "18rem"}}>
-            <Link to={`/${product.id}`} style={{textDecoration: "none"}}>
-                <Card.Img variant="top" src={product.pictureUrl}/>
+            <Link to={`/product/${product.id}`} style={{textDecoration: "none"}}>
+                <Card.Img variant="top" height="249em" src={product.pictureUrl}/>
                 <Card.Body>
                     <Card.Title><span id="prod-name">{product.name}</span></Card.Title>
                 </Card.Body>
