@@ -7,6 +7,7 @@ import InputHook from "../hook/inputHook";
 
 function PopoverAtBottom(props) {
     const id = props.id;
+    const parentProps = props.parentProps;
     let buyerName = InputHook();
 
     console.log(id);
@@ -15,6 +16,7 @@ function PopoverAtBottom(props) {
         event.preventDefault();
         console.log(buyerName.value);
         sendData();
+        setTimeout(()=> parentProps.history.push("/"), 2000);
     }
 
     function sendData(){
@@ -31,8 +33,6 @@ function PopoverAtBottom(props) {
                     'Content-Type':"application/json"
                 }
             }
-        ).then(
-            () => setTimeout(()=> props.history.push(`/`), 2000)
         )
     }
 

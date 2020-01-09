@@ -5,8 +5,9 @@ import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import PopoverAtBottom from "./Popover";
 
-function ProductPage({match}) {
-    const id = match.params.id;
+function ProductPage(props) {
+    const id = props.match.params.id;
+    const parentProps = props;
 
     const url = `http://localhost:8762/product/${id}`;
     const [details, setDetails] = useState({});
@@ -66,7 +67,7 @@ function ProductPage({match}) {
                                 </tbody>
                             </Table>
                         </div>
-                        <div className="buy-button"><PopoverAtBottom data={details} id={id}/></div>
+                        <div className="buy-button"><PopoverAtBottom parentProps={parentProps} data={details} id={id}/></div>
                     </div>
                 <div className="seller-info">
                     <Accordion className="seller-acc">
