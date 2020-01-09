@@ -1,38 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Sunshiney&display=swap');
+
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #c4c4c4 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container div {
+    padding: 0px;
+    margin: 0.3em;
 }
 
-.App-link {
-  color: #61dafb;
+.picture, .specification {
+    flex: 1 1 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.seller-info {
+    flex: 100%;
+    order: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.seller-acc {
+    align-self: center;
+    width: 50%;
+}
+
+.product-name, .price, .row {
+    margin-left: 2.5rem !important;
+    text-align: left;
+    font-weight: bold;
+}
+
+td {
+    max-width: 10em !important;
+}
+
+#description {
+    word-wrap: break-word;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.page-title {
+    font-family: 'Sunshiney', cursive;
+    height: 10% !important;
+    font-size: 5em;
+    margin-bottom: 0.5em;
+}
+
+/*unvisited link*/
+a:link, a:visited, a:hover, a:active {
+    color: black !important;
+    text-decoration: none;
+    text-underline: none;
+}
+
+#price {
+    margin: 0.3em;
+    float: right !important;
+}
+
+#prod-name {
+    float: left !important;
 }

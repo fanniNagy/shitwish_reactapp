@@ -38,7 +38,7 @@ function ProductContainer() {
             </div>)
     } else {
         return (
-            <div>
+            <div className="container">
                 {products.map(product => <Product product={product} key={"product" + product.id}/>)}
             </div>
         )
